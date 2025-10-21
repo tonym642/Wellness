@@ -1,0 +1,97 @@
+<div class="foods-table-container">
+  <div class="foods-table-header">
+    <h4>Foods Table</h4>
+    <input type="text" class="search-input" placeholder="Search Food..." id="foodSearch">
+    
+    <div class="filter-buttons">
+  <button class="filter-btn active" data-group="all">All</button>
+  <button class="filter-btn" data-group="protein">Protein</button>
+  <button class="filter-btn" data-group="carb">Carb</button>
+  <button class="filter-btn" data-group="fat">Fat</button>
+  <button class="filter-btn" data-group="mixed">Mixed</button>
+  <button class="filter-btn" data-group="drinks">Drinks</button>
+    </div>
+    
+    <button class="add-food-btn" id="addFoodBtn" data-bs-toggle="modal" data-bs-target="#addFoodModal">Add Food</button>
+  </div>
+  
+  <div class="foods-grid">
+    <div class="foods-grid-header">
+      <div>Select</div>
+      <div>Food</div>
+      <div>Size</div>
+      <div>Calories</div>
+      <div>Protein</div>
+      <div>Carbs</div>
+      <div>Fats</div>
+      <div>Group</div>
+      <div>Actions</div>
+    </div>
+    <div id="foodsTableBody">
+      <!-- Dynamic content will be inserted here -->
+    </div>
+  </div>
+</div>
+
+<!-- Add Food Modal -->
+<div class="modal fade" id="addFoodModal" tabindex="-1" aria-labelledby="addFoodModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addFoodModalLabel">Add New Food</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addFoodForm">
+          <div class="form-grid-two-columns">
+            <div class="form-row-horizontal">
+              <label for="newFoodName" class="form-label-left">Food Name</label>
+              <input type="text" class="form-control-right" id="newFoodName" placeholder="e.g., Chicken Breast" required>
+            </div>
+            
+            <div class="form-row-horizontal">
+              <label for="newFoodSize" class="form-label-left">Serving Size</label>
+              <input type="text" class="form-control-right" id="newFoodSize" placeholder="e.g., 200g" required>
+            </div>
+            
+            <div class="form-row-horizontal">
+              <label for="newFoodCalories" class="form-label-left">Calories</label>
+              <input type="number" class="form-control-right" id="newFoodCalories" placeholder="330" required>
+            </div>
+            
+            <div class="form-row-horizontal">
+              <label for="newFoodProtein" class="form-label-left">Protein</label>
+              <input type="text" class="form-control-right" id="newFoodProtein" placeholder="62g" required>
+            </div>
+            
+            <div class="form-row-horizontal">
+              <label for="newFoodCarbs" class="form-label-left">Carbs</label>
+              <input type="text" class="form-control-right" id="newFoodCarbs" placeholder="0g" required>
+            </div>
+            
+            <div class="form-row-horizontal">
+              <label for="newFoodFats" class="form-label-left">Fats</label>
+              <input type="text" class="form-control-right" id="newFoodFats" placeholder="7g" required>
+            </div>
+          </div>
+          
+          <div class="form-row-horizontal full-width">
+            <label for="newFoodGroup" class="form-label-left">Food Group</label>
+            <select class="form-control-right" id="newFoodGroup" required>
+              <option value="">Select Group</option>
+              <option value="protein">Protein</option>
+              <option value="carb">Carb</option>
+              <option value="fat">Fat</option>
+              <option value="mixed">Mixed</option>
+              <option value="drinks">Drinks</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelFoodBtn">Cancel</button>
+        <button type="button" class="btn btn-primary" id="saveFoodBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

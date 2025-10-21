@@ -1,0 +1,64 @@
+<div class="dual-layout">
+  <div class="left-section" id="fitnessLeft">
+    <h5>Exercise Database</h5>
+    
+    <!-- Exercise Filter -->
+    <div class="filter-section">
+      <div class="filter-buttons desktop-only">
+        <button class="filter-btn active" data-group="all">All Exercises</button>
+        <button class="filter-btn" data-group="chest">Chest</button>
+        <button class="filter-btn" data-group="back">Back</button>
+        <button class="filter-btn" data-group="legs">Legs</button>
+        <button class="filter-btn" data-group="shoulders">Shoulders</button>
+        <button class="filter-btn" data-group="arms">Arms</button>
+        <button class="filter-btn" data-group="core">Core</button>
+      </div>
+      
+      <select class="filter-dropdown mobile-only" id="exerciseFilterDropdown">
+        <option value="all">All Exercises</option>
+        <option value="chest">Chest</option>
+        <option value="back">Back</option>
+        <option value="legs">Legs</option>
+        <option value="shoulders">Shoulders</option>
+        <option value="arms">Arms</option>
+        <option value="core">Core</option>
+      </select>
+    </div>
+    
+    <!-- Exercise List -->
+    <div id="fitnessExercisesList">
+      <!-- Exercises will be populated here -->
+    </div>
+  </div>
+
+  <div class="right-section" id="fitnessRight">
+    <!-- Workout Planner Header -->
+    <div class="workout-title-row">
+      <h4>Workout Planner</h4>
+    </div>
+    
+    <!-- Controls Row -->
+    <div class="workout-controls-row">
+      <div class="controls-left">
+        <button class="toggle-btn" id="toggleExerciseList">Hide Exercise List</button>
+      </div>
+      <div class="controls-right">
+        <!-- Day Navigation Tabs -->
+        <div class="day-tabs">
+          <button class="day-tab active" data-day="monday">Mon</button>
+          <button class="day-tab" data-day="tuesday">Tue</button>
+          <button class="day-tab" data-day="wednesday">Wed</button>
+          <button class="day-tab" data-day="thursday">Thu</button>
+          <button class="day-tab" data-day="friday">Fri</button>
+          <button class="day-tab" data-day="saturday">Sat</button>
+          <button class="day-tab" data-day="sunday">Sun</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Workout Content -->
+    <div id="workoutsContainer">
+      <!-- Workout content will be populated here -->
+    </div>
+  </div>
+</div>

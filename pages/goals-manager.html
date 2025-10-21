@@ -1,0 +1,62 @@
+<!-- Goals Manager - Internal App Page (Loan Central style) -->
+<div class="container-fluid py-4">
+  <div class="row g-4">
+    <!-- Nutrition Goals Card -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="card p-3 mb-4 shadow-sm rounded-4">
+        <div class="d-flex align-items-center mb-3">
+          <h5 class="mb-0 text-success fw-bold flex-grow-1">Nutrition Goals</h5>
+          <button class="btn btn-success btn-sm ms-2" onclick="addGoal('nutrition')">
+            <i class="bi bi-plus-circle me-1"></i> Add Goal
+          </button>
+        </div>
+        <ul class="list-unstyled" id="nutritionGoalsList"></ul>
+      </div>
+    </div>
+    <!-- Fitness Goals Card -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="card p-3 mb-4 shadow-sm rounded-4">
+        <div class="d-flex align-items-center mb-3">
+          <h5 class="mb-0 text-success fw-bold flex-grow-1">Fitness Goals</h5>
+          <button class="btn btn-success btn-sm ms-2" onclick="addGoal('fitness')">
+            <i class="bi bi-plus-circle me-1"></i> Add Goal
+          </button>
+        </div>
+        <ul class="list-unstyled" id="fitnessGoalsList"></ul>
+      </div>
+    </div>
+    <!-- Wellness Goals Card -->
+    <div class="col-lg-4 col-md-6 col-12">
+      <div class="card p-3 mb-4 shadow-sm rounded-4">
+        <div class="d-flex align-items-center mb-3">
+          <h5 class="mb-0 text-success fw-bold flex-grow-1">Wellness Goals</h5>
+          <button class="btn btn-success btn-sm ms-2" onclick="addGoal('wellness')">
+            <i class="bi bi-plus-circle me-1"></i> Add Goal
+          </button>
+        </div>
+        <ul class="list-unstyled" id="wellnessGoalsList"></ul>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+
+    <style>
+      /* Ensure goal input and action buttons stay on one row */
+      .goal-row { display:flex; align-items:center; gap:0.5rem; }
+      .goal-row .goal-input { flex:1 1 auto; min-width:0; }
+      .goal-row .goal-actions { flex:0 0 auto; display:flex; gap:0.5rem; }
+    </style>
+
+    <script>
+    // Call initGoalsManagerPage if the external script loader loaded it
+    if (typeof initGoalsManagerPage === 'function') {
+      initGoalsManagerPage();
+    } else {
+      // Try to load the external script explicitly as a fallback
+      const s = document.createElement('script');
+      s.src = 'js/goals-manager.js';
+      s.onload = () => { if (typeof initGoalsManagerPage === 'function') initGoalsManagerPage(); };
+      document.head.appendChild(s);
+    }
+    </script>

@@ -1,0 +1,127 @@
+/* Wellness App Styles - Tailwind Integration */
+
+/* Custom font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Set default font family */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Legacy CSS for specific JavaScript interactions that need to be preserved */
+.hidden { 
+  display: none !important; 
+}
+
+.show { 
+  display: block !important; 
+}
+
+/* Smooth transitions for JavaScript-controlled elements */
+.dropdown-transition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Custom scrollbar for glass elements */
+.glass-card::-webkit-scrollbar,
+.glass-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.glass-card::-webkit-scrollbar-track,
+.glass-modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.glass-card::-webkit-scrollbar-thumb,
+.glass-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.glass-card::-webkit-scrollbar-thumb:hover,
+.glass-modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Preserve any critical legacy styles that JavaScript depends on */
+.exercise-headers {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.fitness-exercise-item-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.fitness-exercise-item-row:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.workout-headers {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .exercise-headers,
+  .fitness-exercise-item-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .workout-headers {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* Animation classes for JavaScript */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(12px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
