@@ -7,18 +7,24 @@ on:
 
 jobs:
   deploy:
+    name: Deploy Wellness App
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy Wellness App via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+      - name: Deploy to SiteGround via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_PATH }}
           local-dir: ./
-          protocol: ftps
-          log-level: minimal
+          protocol: ftp
+          log-level: verbose
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+            **/.DS_Store
